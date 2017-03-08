@@ -1,11 +1,15 @@
 package co.simplon.dates;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class DecouverteDates {
+
+	private static final int style = DateFormat.MEDIUM;
 
 	public DecouverteDates() {
 		super();
@@ -57,10 +61,12 @@ public class DecouverteDates {
 
 	public String formaterUneHeure(Date time) {
 
-		SimpleDateFormat heureFormatte = new SimpleDateFormat("HHmmss");
-		String heureFinale = heureFormatte.format(time).substring(0, 2) + "h"
-				+ heureFormatte.format(time).substring(2, 4) + "min"
-				+ heureFormatte.format(time).substring(4, 6) + "sec";
+		SimpleDateFormat heureFormatte = new SimpleDateFormat("HH");
+		SimpleDateFormat minFormatte = new SimpleDateFormat("mm");
+		SimpleDateFormat secondeFormatte = new SimpleDateFormat("ss");
+		String heureFinale = heureFormatte.format(time) + "h"
+				+ minFormatte.format(time) + "min"
+				+ secondeFormatte.format(time) + "sec";
 
 		return heureFinale;
 		
@@ -68,7 +74,9 @@ public class DecouverteDates {
 	}
 
 	public String formaterDateEnFrancais(Date date) {
-		// TODO
-		return "";
+		
+		SimpleDateFormat dateFrancais = new SimpleDateFormat("EEEE dd MMMM yyyy");
+		String dateFrance = dateFrancais.format(date);
+		return dateFrance;
 	}
 }
