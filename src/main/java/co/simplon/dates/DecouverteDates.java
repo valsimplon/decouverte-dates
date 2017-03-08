@@ -2,6 +2,7 @@ package co.simplon.dates;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DecouverteDates {
@@ -38,8 +39,14 @@ public class DecouverteDates {
 
 	public Date augmenterDate(Date dateInitiale, int nombreJours,
 			int nombreHeures, int nombreMinutes) {
-		// TODO
-		throw new RuntimeException("à implémenter");
+		
+		Calendar calendrier = Calendar.getInstance();
+		calendrier.setTime(dateInitiale);
+		calendrier.add(Calendar.DATE, nombreJours);
+		calendrier.add(Calendar.HOUR, nombreHeures);
+		calendrier.add(Calendar.MINUTE, nombreMinutes);
+		Date dateFinale = calendrier.getTime();
+		return dateFinale;
 	}
 
 	public String formaterUneDate(Date date) {
