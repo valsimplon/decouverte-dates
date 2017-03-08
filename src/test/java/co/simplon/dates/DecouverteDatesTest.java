@@ -49,7 +49,7 @@ public class DecouverteDatesTest {
 		Calendar calendrier = Calendar.getInstance();
 		calendrier.setTime(dateConstruite);
 		assertThat(calendrier.get(Calendar.DAY_OF_MONTH), equalTo(4));
-		assertThat(calendrier.get(Calendar.MONTH), equalTo(4));
+		assertThat(calendrier.get(Calendar.MONTH), equalTo(Calendar.APRIL));
 		assertThat(calendrier.get(Calendar.YEAR), equalTo(2017));
 		assertThat(calendrier.get(Calendar.HOUR_OF_DAY), equalTo(0));
 		assertThat(calendrier.get(Calendar.MINUTE), equalTo(0));
@@ -64,7 +64,7 @@ public class DecouverteDatesTest {
 		Calendar calendrier = Calendar.getInstance();
 		calendrier.setTime(dateConstruite);
 		assertThat(calendrier.get(Calendar.DAY_OF_MONTH), equalTo(31));
-		assertThat(calendrier.get(Calendar.MONTH), equalTo(12));
+		assertThat(calendrier.get(Calendar.MONTH), equalTo(Calendar.DECEMBER));
 		assertThat(calendrier.get(Calendar.YEAR), equalTo(2017));
 		assertThat(calendrier.get(Calendar.HOUR_OF_DAY), equalTo(0));
 		assertThat(calendrier.get(Calendar.MINUTE), equalTo(0));

@@ -1,6 +1,7 @@
 package co.simplon.dates;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DecouverteDates {
@@ -10,13 +11,29 @@ public class DecouverteDates {
 	}
 
 	public boolean estInferieurDateCourante(Date date) throws ParseException {
-		// TODO
-		throw new RuntimeException("à implémenter");
+		
+		Boolean retour = false;
+		Date aujourdhui = new Date();
+		if (date.before(aujourdhui)) {
+			retour = true;
+		} else if (date.after(aujourdhui)) {
+			retour =  false;
+		}
+		
+		return retour;
 	}
 
 	public Date construireDate(String chaineFournie) {
-		// TODO
-		throw new RuntimeException("à implémenter");
+		
+		SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			Date dateFinale = formatter1.parse(chaineFournie);
+			return dateFinale;
+		} catch (ParseException erreur) {
+			erreur.printStackTrace();
+		}
+		return null;
+		
 	}
 
 	public Date augmenterDate(Date dateInitiale, int nombreJours,
