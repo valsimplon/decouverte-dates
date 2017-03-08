@@ -136,6 +136,6 @@ public class DecouverteDatesTest {
 		
 		String dateFormateeFr = dd.formaterDateEnFrancais(date);
 		
-		assertThat(dateFormateeFr, equalTo("Mardi 31 janvier 2017"));
+		assertThat(dateFormateeFr, equalTo("mardi 31 janvier 2017"));
 	}
 }

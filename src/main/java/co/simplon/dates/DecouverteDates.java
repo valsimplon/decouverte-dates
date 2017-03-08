@@ -50,8 +50,9 @@ public class DecouverteDates {
 	}
 
 	public String formaterUneDate(Date date) {
-		// TODO
-		return "";
+		
+		SimpleDateFormat dateFormatte = new SimpleDateFormat("dd_MM_yyyy");
+		return dateFormatte.format(date);
 	}
 
 	public String formaterUneHeure(Date time) {
